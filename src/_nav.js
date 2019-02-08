@@ -15,6 +15,11 @@ export default {
       url: '/dashboard',
       icon: 'icon-book-open',
     },
+    {
+      name: 'ประเมิณ',
+      url: '/rate',
+      icon: 'icon-book-open',
+    },
    
   ],
 };
