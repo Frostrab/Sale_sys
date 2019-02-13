@@ -10,7 +10,8 @@ import Ratelist from './Ratelist';
 const { Column, ColumnGroup } = Table;
 
 
-export default class Showtable extends PureComponent{
+
+export default class MDtable extends PureComponent{
 
     state = {
         
@@ -155,26 +156,34 @@ export default class Showtable extends PureComponent{
             title: 'ประเมิณ',
             dataIndex: 'rate',
             key: 'rate',
-            
           },{
             title: 'MD1',
             dataIndex: 'md1',
             key: 'md1',
             render: () => (
                 <Ratelist />),
+         
           },{
             title: 'MD2',
             dataIndex: 'md2',
             key: 'md2',
             render: () => (
                 <Ratelist />),
+         
           },{
             title: 'MD3',
             dataIndex: 'md3',
             key: 'md3',
             render: () => (
                 <Ratelist />),
-          }]
+          
+          },{
+            title: 'Final',
+            dataIndex: 'final',
+            key: 'final',
+            
+          },
+        ]
     }
 
        
@@ -186,7 +195,12 @@ export default class Showtable extends PureComponent{
       style={{ width: "100%" }}
     >
     
-            <Table size="small" columns={this.state.col1} dataSource={this.state.data2} pagination={false} />
+            <Table 
+            bordered={true}
+            size="small" 
+            columns={this.state.col1} 
+            dataSource={this.state.data2}
+            pagination={false} />
             </Card>
             </div>
         )

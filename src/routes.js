@@ -1,5 +1,7 @@
 import React from 'react';
 import DefaultLayout from './containers/DefaultLayout';
+import EMPrate from './views/Rate2/EMPrate1';
+import MDrate from './views/Rate2/MDrate1';
 
 const Inbox = React.lazy(() => import('./views/Inbox'))
 const PO = React.lazy(()=> import('./views/PO'))
@@ -47,6 +49,11 @@ const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
 
 const Rate = React.lazy(() => import('./views/Rate'));
+const Rate2 = React.lazy(() => import('./views/Rate2'));
+
+const EMPratetable = React.lazy(() => import('./views/EMPratetable'));
+const MDratetable = React.lazy(() => import('./views/MDratetable'));
+const Finalratetable = React.lazy(() => import('./views/Finalratetable'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -104,6 +111,11 @@ const routes = [
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   
   { path: '/rate', exact: true, name: 'Rate', component: Rate },
+  { path: '/rate2', exact: true, name: 'Rate2', component: Rate2 },
+  { path: '/empratetable', exact: true, name: 'EMPratetable', component: EMPratetable },
+  { path: '/mdratetable', exact: true, name: 'MDratetable', component: MDratetable },
+  { path: '/finalratetable', exact: true, name: 'Finalratetable', component: Finalratetable },
+  
 ];
 
 export default routes;

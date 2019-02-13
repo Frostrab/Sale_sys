@@ -1,58 +1,13 @@
 
 import React,{PureComponent} from 'react';
 import 'antd/dist/antd.css';
-import { Table, Pagination, Input } from 'antd';
+import { Table, Pagination, Input, Card } from 'antd';
 
-import './index.css';
+//import './index.css';
 import Ratelist from './Ratelist';
 
 
 const { Column, ColumnGroup } = Table;
-
-const columns1 = [{
-  title: 'ปัจจัยประเมิณ',
-  dataIndex: 'content',
-  key: 'content',
-  
-}, {
-  title: 'ป',
-  dataIndex: 'por',
-  key: 'por',
-}, {
-  title: 'หน',
-  dataIndex: 'head',
-  key: 'head',
-}, {
-  title: 'ศ',
-  key: 'sor',
-  dataIndex: 'sor',
-}, {
-  title: 'ส',
-  key: 'tiger',
-  dataIndex:'tiger',
-
-}];
-
-const columns2 = [{
-    title: 'ปัจจัยประเมิณ',
-    dataIndex: 'content',
-    key: 'content',
-    
-  }, {
-    title: '',
-    dataIndex: 'por',
-    key: 'por',
-  },{
-    title: 'ประเมิณ',
-    dataIndex: 'rate1',
-    key: 'rate1',
-    render: () => (
-        <Ratelist />),
-  },];
-
-
-
-
 
 export default class Rate extends PureComponent{
 
@@ -214,19 +169,66 @@ export default class Rate extends PureComponent{
       tiger:'30%',
     
           }],
+          
+          col1:[{
+            title: 'ปัจจัยประเมิณ',
+            dataIndex: 'content',
+            key: 'content',
+            
+          }, {
+            title: 'ป',
+            dataIndex: 'por',
+            key: 'por',
+          }, {
+            title: 'หน',
+            dataIndex: 'head',
+            key: 'head',
+          }, {
+            title: 'ศ',
+            key: 'sor',
+            dataIndex: 'sor',
+          }, {
+            title: 'ส',
+            key: 'tiger',
+            dataIndex:'tiger',
+    
+          }],
+          col2:[{
+            title: 'ปัจจัยประเมิณ',
+            dataIndex: 'content',
+            key: 'content',
+            
+          }, {
+            title: '',
+            dataIndex: 'por',
+            key: 'por',
+          },{
+            title: 'ประเมิณ',
+            dataIndex: 'rate1',
+            key: 'rate1',
+            render: () => (
+                <Ratelist />),
+    
+          }]
     }
 
        
     render(){
         return(
             <div>
-            <Table columns={columns1} dataSource={this.state.data1} pagination={false} />
-            <hr />
-
-           
-            <Table columns={columns2} dataSource={this.state.data2} pagination={false} />
+            <Card
+      
+            style={{ width: "100%" }}
+            >
+            <Table size="small" columns={this.state.col1} dataSource={this.state.data1} pagination={false} />
+            </Card>
+            <Card
+            title="แบบประเมิณ"
+            style={{ width: "100%" }}
+>
+            <Table size="small" columns={this.state.col2} dataSource={this.state.data2} pagination={false} />
     
-        
+            </Card>
     
     
    
